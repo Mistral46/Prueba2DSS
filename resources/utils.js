@@ -7,8 +7,7 @@ const validaOpenai = async (expresion)=>{
       apiKey: process.env.OPENAI_API_KEY,
     });
     const openai = new OpenAIApi(configuration);
-    pregunta = `contiene lenguaje 
-     javascript en la siguiente expresion?
+    pregunta = `contiene lenguaje javascript?
     "${expresion}". Responde true o false en minusculas`
     console.log(pregunta);
     const completion = await openai.createCompletion({
@@ -31,10 +30,7 @@ const validaInput = (expresion) =>{
 }
 const validaSanitizer = (expresion) => {
     expresion = sanitizer.escape(expresion); 
-    // expresion = sanitizer.normalizeRCData(expresion); 
-    // expresion = sanitizer.sanitize(expresion); 
-    // expresion = sanitizer.unescapeEntities(expresion); //no sirve
-    console.log(expresion)
+       console.log(expresion)
     return(expresion)
 }
 
