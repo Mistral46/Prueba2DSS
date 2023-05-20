@@ -1,4 +1,5 @@
 const myConnection = require('../database/config')
+const pool = require('../database/configpg')
 
 const loginForm = (request,response) => {
     response.render('login')
@@ -16,11 +17,18 @@ const doLogin = async (request,response)=>{
      }
     );
 }
-//const doLogin = async (request,response) =>{
+const doLoginpg = async (request,response) =>{
+    const res = await pool.query(
+        `select * from users where username ="${request.body.username}"
+        and password ="${request.body.password}"`,
+    );
+    console.log(res)
+}
 
 
 
 module.exports ={
     loginForm, 
-    doLogin
+    doLogin,
+    doLoginpg
 }

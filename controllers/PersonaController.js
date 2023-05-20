@@ -1,7 +1,7 @@
 const myConnection = require ('../database/config')
-//const pgConnection = require ('../database/configpg')
+const pool = require('../database/configpg')
 
-const agregaPersonaMy = async(request,response) => {
+const agregarPersonaMy = async(request,response) => {
     await myConnection.query(
         'insert into persona (nombre,apellido,direccion)values (?,?,?) returning (id,nomnre, apellido)',
         [
@@ -11,6 +11,7 @@ const agregaPersonaMy = async(request,response) => {
         ],
         function(err,results){
             console.log(results);
+            console.log(err);
         } 
     );
 }
@@ -18,14 +19,16 @@ const agregaPersonaMy = async(request,response) => {
 const agregarPersonaPg = async(request,response) =>{
 
     const res = await pgConnection.query(
-    'insert into persona (nombre,apellido,direccion)values (?,?,?) returning (id,nomnre, apellido)',
+        `insert into persona(nombre,apellido,direccion)
+        values (?1,?2,?3) returning (id,nombre,apellido,direccion)`,
+
 [
         request.body.nombre,
         request.body.apellido,
         request.body.direccion
 ]
 );
-console.log(res)
+    console.log(res)
 
 }
 
@@ -35,7 +38,7 @@ const formulario = (request,response)=>{
     
 }
 module.exports = {
-    agregaPersonaMy,
+    agregarPersonaMy,
     agregarPersonaPg,
     formulario,
 }
