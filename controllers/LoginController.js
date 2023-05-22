@@ -1,5 +1,5 @@
 const myConnection = require('../database/config')
-const pool = require('../database/configpg')
+
 
 const loginForm = (request,response) => {
     response.render('login')
