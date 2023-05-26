@@ -1,6 +1,5 @@
 var sanitizer = require('sanitizer');
 
-
 const validaOpenai = async (expresion)=>{
     const { Configuration, OpenAIApi } = require("openai");
     const configuration = new Configuration({

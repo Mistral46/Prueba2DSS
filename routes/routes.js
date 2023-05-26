@@ -14,6 +14,7 @@ const loginFunctions = require('../controllers/LoginController')
 //PARA LOGIN
 router.get('/login',loginFunctions.loginForm)
 router.post('/doLogin',loginFunctions.doLogin)
+router.post('/preguntaopenai',main.preguntaOpenai)
 
 module.exports = router
 
