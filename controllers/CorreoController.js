@@ -12,7 +12,7 @@ const inCorreo =  async (request,response)=>{
             console.log(results)
             console.log(err)
             if(results[0]){
-                response.json({message:"Registro Exitoso"})
+                response.redirect('/exito')
             }else{
                 response.json({message:"Error de ingreso"})
             }

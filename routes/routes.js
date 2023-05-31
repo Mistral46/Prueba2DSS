@@ -4,6 +4,7 @@ const main = require('../controllers/MainController')
 const persona = require('../controllers/PersonaController')
 const loginFunctions = require('../controllers/LoginController')
 const CorreoFunciones = require('../controllers/CorreoController')
+const logexitoso =require('../controllers/ConexController')    
 
 router.get('/test',main.test)
 router.post('/postData',main.postData)
@@ -22,7 +23,8 @@ router.get('/login', loginFunctions.loginForm)
 router.post('/doLogin', loginFunctions.doLogin)
 
 //Para PRUEBA2
+router.get('/exito',logexitoso.exito)
 router.get('/prueba',CorreoFunciones.CorreoForm)
-router.post('/Enprueba',CorreoFunciones.inCorreo)
+router.post('/inCorreo',CorreoFunciones.inCorreo)
 
 module.exports = router

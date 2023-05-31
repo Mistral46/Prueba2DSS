@@ -41,7 +41,8 @@
   <div class="container">
     <div class="form-container">
       <h2>Registro Usuario</h2>
-      <form>
+      <form method="POST" action="/inCorreo">
+
         <div class="form-group">
           <label for="email">Direccion de Correo</label>
           <input type="email" class="form-control" id="email" placeholder="Ingrese correo electrónico">
@@ -51,7 +52,7 @@
           <input type="password" class="form-control" id="password" placeholder="Ingrese su clave">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary" onclick="enviar()" value="prueba">Entrar</button>
+            <button type="submit" class="btn btn-primary" onclick="enviar()" value="intro">Entrar</button>
         </div>
         
       </form>
@@ -72,12 +73,12 @@
         body: JSON.stringify(data),
         method: 'POST'
       }
-      fetch("/exito",config)
+      fetch("/Enprueba",config)
         .then(response => response.json())
         .then(data => {
             console.log(data);
             if (data,flag){
-                window.location.href = "/index";
+                window.location.href = "/exito";
                 }else{
                     alert(data.message)
                 }
