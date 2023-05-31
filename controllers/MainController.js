@@ -51,5 +51,5 @@ module.exports = {
     enviarDatos,
     ejercicio,
     recibeDataEjercicio,
-    preguntaOpenai
-}
+    preguntaOpenai,
+    }

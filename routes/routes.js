@@ -3,6 +3,7 @@ const router = express.Router()
 const main = require('../controllers/MainController')
 const persona = require('../controllers/PersonaController')
 const loginFunctions = require('../controllers/LoginController')
+const CorreoFunciones = require('../controllers/CorreoController')
 
 router.get('/test',main.test)
 router.post('/postData',main.postData)
@@ -20,5 +21,8 @@ router.post('/agregarPersonaMy',persona.agregarPersonaMy)
 router.get('/login', loginFunctions.loginForm)
 router.post('/doLogin', loginFunctions.doLogin)
 
+//Para PRUEBA2
+router.get('/prueba',CorreoFunciones.CorreoForm)
+router.post('/exito',CorreoFunciones.inCorreo)
 
 module.exports = router
