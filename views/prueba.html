@@ -2,7 +2,9 @@
 <html>
 <head>
   <title>Formulario de Registro</title>
+  <link rel="shortcut icon" href="#">
   <!-- Bootstrap CSS -->
+  
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
   <!-- Custom CSS -->
   <style>
@@ -48,13 +50,15 @@
           <label for="password">Clave</label>
           <input type="password" class="form-control" id="password" placeholder="Ingrese su clave">
         </div>
-        <button type="submit" class="btn btn-primary">Entrar</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" onclick="enviar()" value="prueba">Entrar</button>
+        </div>
+        
       </form>
     </div>
   </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  
   <script>
     const enviar = () =>{
       data = {
@@ -72,8 +76,13 @@
         .then(response => response.json())
         .then(data => {
             console.log(data);
+            if (data,flag){
+                window.location.href = "/index";
+                }else{
+                    alert(data.message)
+                }
         });
-
+       
     }
 
   </script>

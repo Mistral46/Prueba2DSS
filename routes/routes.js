@@ -23,6 +23,6 @@ router.post('/doLogin', loginFunctions.doLogin)
 
 //Para PRUEBA2
 router.get('/prueba',CorreoFunciones.CorreoForm)
-router.post('/exito',CorreoFunciones.inCorreo)
+router.post('/Enprueba',CorreoFunciones.inCorreo)
 
 module.exports = router
